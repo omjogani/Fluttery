@@ -1,6 +1,10 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttery/constants/colors.dart';
 import 'package:fluttery/constants/text_styles.dart';
+import 'package:fluttery/screens/home/components/drawer_list_tile.dart';
+import 'package:fluttery/screens/home/components/footer.dart';
+import 'package:fluttery/screens/home/components/tool_card.dart';
 import 'package:fluttery/widgets/default_button.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -31,18 +35,21 @@ class HomeScreen extends StatelessWidget {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
+                      children: <Widget>[
+                        const Text(
                           "Welcome to Fluttery",
                           style: kTitleTextStyle,
                         ),
-                        SizedBox(height: 15.0),
-                        Text(
-                          "Create your Widget by designing here with easy customization and working with easy way",
+                        const SizedBox(height: 15.0),
+                        const Text(
+                          "Collection of tools for faster flutter development, \nUse Tools & Build Perfect Widget for your next Flutter Project.",
                           style: kSubTitleTextStyle,
                         ),
-                        SizedBox(height: 25.0),
-                        DefaultButton(),
+                        const SizedBox(height: 25.0),
+                        DefaultButton(
+                          buttonText: "Get Started",
+                          onPressed: () {},
+                        ),
                       ],
                     ),
                   ),
@@ -55,12 +62,12 @@ class HomeScreen extends StatelessWidget {
             ),
           ),
           Column(
-            children: [
-              Text(
+            children: <Widget>[
+              const Text(
                 "Get Access to Tools for Free",
                 style: kTitleTextStyle,
               ),
-              SizedBox(height: 20.0),
+              const SizedBox(height: 20.0),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: <Widget>[
@@ -68,128 +75,77 @@ class HomeScreen extends StatelessWidget {
                     title: "Shadow Generator",
                     description: "generate shadow with just little editing",
                     icon: Icons.design_services,
+                    onTap: () {},
                   ),
                   ToolCard(
                     title: "Color Picker",
                     description:
                         "Pick the perfect color for your flutter apps.",
                     icon: Icons.colorize,
+                    onTap: () {},
                   ),
                   ToolCard(
-                    title: "Image Diamention",
+                    title: "Image Dimension",
                     description:
                         "Get Image Ratio Based on specific Aspect Ratio.",
                     icon: Icons.image_aspect_ratio_rounded,
+                    onTap: () {},
                   ),
                 ],
               ),
-              SizedBox(height: 20.0),
-              Footer(),
+              const SizedBox(height: 20.0),
+              const Footer(),
             ],
           ),
         ],
       ),
       drawer: Drawer(
-        child: Column(
-          children: <Widget>[
-            Text("Hello"),
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-class ToolCard extends StatelessWidget {
-  const ToolCard({
-    super.key,
-    required this.title,
-    required this.description,
-    required this.icon,
-  });
-  final String title;
-  final String description;
-  final IconData icon;
-
-  @override
-  Widget build(BuildContext context) {
-    final Size size = MediaQuery.of(context).size;
-    return MouseRegion(
-      cursor: SystemMouseCursors.click,
-      child: GestureDetector(
-        onTap: () {},
-        child: Container(
-          width: size.width * 0.20,
-          height: size.width * 0.20,
-          decoration: BoxDecoration(
-            color: Colors.white70,
-            borderRadius: BorderRadius.circular(20.0),
-            boxShadow: const <BoxShadow>[
-              BoxShadow(
-                color: kShadowColor,
-                offset: Offset(0, 12),
-                blurRadius: 16.0,
+        backgroundColor: kBackgroundColor,
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 15.0, vertical: 8.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: const <Widget>[
+                  Text(
+                    "Fluttery",
+                    style: kTitleTextStyle,
+                  ),
+                  CloseButton(),
+                ],
+              ),
+              Text(
+                "Collection of Tools for faster Flutter Development",
+                maxLines: 2,
+                textAlign: TextAlign.start,
+                style: kSubTitleTextStyle.copyWith(fontSize: 16.0),
+              ),
+              const SizedBox(height: 15.0),
+              DrawerListTile(
+                icon: Icons.home_rounded,
+                text: "Home",
+                onTap: () {},
+              ),
+              DrawerListTile(
+                icon: Icons.design_services_rounded,
+                text: "Tools",
+                onTap: () {},
+              ),
+              DrawerListTile(
+                icon: Icons.settings,
+                text: "Settings",
+                onTap: () {},
+              ),
+              DrawerListTile(
+                icon: Icons.person_rounded,
+                text: "About",
+                onTap: () {},
               ),
             ],
           ),
-          padding: const EdgeInsets.all(8.0),
-          child: Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Expanded(
-                  flex: 2,
-                  child: Icon(
-                    icon,
-                    color: kPrimaryButtonColor,
-                    size: 55.0,
-                  ),
-                ),
-                Expanded(
-                  flex: 2,
-                  child: ListView(
-                    children: [
-                      Text(
-                        title,
-                        maxLines: 2,
-                        textAlign: TextAlign.center,
-                        style: kSubTitleTextStyle.copyWith(
-                            fontWeight: FontWeight.w700, fontSize: 22.0),
-                      ),
-                      const SizedBox(height: 10.0),
-                      Text(
-                        description,
-                        maxLines: 2,
-                        overflow: TextOverflow.ellipsis,
-                        textAlign: TextAlign.center,
-                        style: kSubTitleTextStyle.copyWith(fontSize: 18.0),
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-          ),
         ),
-      ),
-    );
-  }
-}
-
-class Footer extends StatelessWidget {
-  const Footer({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    final Size size = MediaQuery.of(context).size;
-    return Container(
-      width: size.width,
-      height: 50.0,
-      color: kPrimaryButtonColor,
-      alignment: Alignment.center,
-      child: Text(
-        "Fluttery, Copyright © 2022 Om Jogani All Rights Reserved!!",
-        style: kSubTitleTextStyle.copyWith(color: Colors.white),
       ),
     );
   }
