@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:fluttery/constants/colors.dart';
 
-class CloseButton extends StatefulWidget {
-  const CloseButton({
+class CustomCloseButton extends StatefulWidget {
+  const CustomCloseButton({
     Key? key,
   }) : super(key: key);
 
   @override
-  State<CloseButton> createState() => _CloseButtonState();
+  State<CustomCloseButton> createState() => _CustomCloseButtonState();
 }
 
-class _CloseButtonState extends State<CloseButton> {
+class _CustomCloseButtonState extends State<CustomCloseButton> {
   bool isHover = false;
   @override
   Widget build(BuildContext context) {
@@ -27,7 +27,7 @@ class _CloseButtonState extends State<CloseButton> {
         width: 30.0,
         alignment: Alignment.center,
         decoration: BoxDecoration(
-          color: kPrimaryButtonColor,
+          color: kPrimaryColor,
           borderRadius: BorderRadius.circular(8.0),
           boxShadow: <BoxShadow>[
             BoxShadow(

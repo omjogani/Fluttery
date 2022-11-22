@@ -45,7 +45,7 @@ class ToolCard extends StatelessWidget {
                   flex: 2,
                   child: Icon(
                     icon,
-                    color: kPrimaryButtonColor,
+                    color: kPrimaryColor,
                     size: 55.0,
                   ),
                 ),

@@ -11,7 +11,7 @@ class Footer extends StatelessWidget {
     return Container(
       width: size.width,
       height: 50.0,
-      color: kPrimaryButtonColor,
+      color: kPrimaryColor,
       alignment: Alignment.center,
       child: Text(
         "Fluttery, Copyright © 2022 Om Jogani All Rights Reserved!!",

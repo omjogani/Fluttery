@@ -20,7 +20,7 @@ class DrawerListTile extends StatefulWidget {
 class _DrawerListTileState extends State<DrawerListTile> {
   Color buttonColor = Colors.white;
   Color textColor = Colors.black;
-  Color iconColor = kPrimaryButtonColor;
+  Color iconColor = kPrimaryColor;
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +30,7 @@ class _DrawerListTileState extends State<DrawerListTile> {
       onHover: (isHover) {
         if (isHover) {
           setState(() {
-            buttonColor = kPrimaryButtonColor;
+            buttonColor = kPrimaryColor;
             textColor = Colors.white;
             iconColor = Colors.white;
           });
@@ -38,7 +38,7 @@ class _DrawerListTileState extends State<DrawerListTile> {
           setState(() {
             buttonColor = Colors.white;
             textColor = Colors.black;
-            iconColor = kPrimaryButtonColor;
+            iconColor = kPrimaryColor;
           });
         }
       },

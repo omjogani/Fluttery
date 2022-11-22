@@ -21,7 +21,7 @@ class DefaultButton extends StatelessWidget {
         alignment: Alignment.center,
         padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 8.0),
         decoration: BoxDecoration(
-          color: kPrimaryButtonColor,
+          color: kPrimaryColor,
           borderRadius: BorderRadius.circular(10.0),
           boxShadow: const <BoxShadow>[
             BoxShadow(

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:fluttery/screens/home/home.dart';
+import 'package:fluttery/constants/colors.dart';
+import 'package:fluttery/tools/shadow_generator/shadow_generator.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,11 +14,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Fluttery',
       theme: ThemeData(
-        primarySwatch: Colors.purple,
+        primarySwatch: kMaterialPrimaryColor,
         fontFamily: "SF Pro Text",
       ),
       
-      home: const HomeScreen(),
+      home: const ShadowGenerator(),
     );
   }
 }
