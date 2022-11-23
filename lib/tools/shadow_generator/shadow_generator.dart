@@ -96,242 +96,125 @@ class _ShadowGeneratorState extends State<ShadowGenerator> {
                             animationDuration:
                                 const Duration(milliseconds: 500),
                             children: <ExpansionPanelRadio>[
-                              ExpansionPanelRadio(
-                                backgroundColor: Colors.white54,
-                                canTapOnHeader: true,
-                                value: "Shadow Customization",
-                                headerBuilder: (context, isExpanded) {
-                                  return Container(
-                                    alignment: Alignment.centerLeft,
-                                    padding: const EdgeInsets.symmetric(
-                                      horizontal: 10.0,
+                              customExpansionPanelRadio(
+                                title: "Shadow Customization",
+                                children: <Widget>[
+                                  Container(
+                                    decoration: BoxDecoration(
+                                      color: Colors.white,
+                                      borderRadius: BorderRadius.circular(10.0),
                                     ),
-                                    child: const Text(
-                                      "Shadow Customization",
-                                      maxLines: 1,
-                                      style: TextStyle(
-                                        fontSize: 20.0,
-                                        fontWeight: FontWeight.w600,
-                                      ),
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: <Widget>[
+                                        const Padding(
+                                          padding: EdgeInsets.only(
+                                            left: 15.0,
+                                            top: 5.0,
+                                          ),
+                                          child: Text(
+                                            "Offset X-Axis",
+                                            textAlign: TextAlign.start,
+                                            style: kSubTitleTextStyle,
+                                          ),
+                                        ),
+                                        Slider(
+                                          value: offsetX,
+                                          max: 50,
+                                          activeColor: kPrimaryColor,
+                                          inactiveColor:
+                                              kPrimaryColor.withOpacity(0.5),
+                                          label: offsetX.round().toString(),
+                                          onChanged: (double newOffsetX) {
+                                            setState(() {
+                                              offsetX = newOffsetX;
+                                            });
+                                          },
+                                        ),
+                                      ],
                                     ),
-                                  );
-                                },
-                                body: Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child: Column(
-                                    children: <Widget>[
-                                      Container(
-                                        decoration: BoxDecoration(
-                                          color: Colors.white,
-                                          borderRadius:
-                                              BorderRadius.circular(10.0),
-                                        ),
-                                        child: Column(
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: <Widget>[
-                                            const Padding(
-                                              padding: EdgeInsets.only(
-                                                left: 15.0,
-                                                top: 5.0,
-                                              ),
-                                              child: Text(
-                                                "Offset X-Axis",
-                                                textAlign: TextAlign.start,
-                                                style: kSubTitleTextStyle,
-                                              ),
-                                            ),
-                                            Slider(
-                                              value: offsetX,
-                                              max: 50,
-                                              activeColor: kPrimaryColor,
-                                              inactiveColor: kPrimaryColor
-                                                  .withOpacity(0.5),
-                                              label: offsetX.round().toString(),
-                                              onChanged: (double newOffsetX) {
-                                                setState(() {
-                                                  offsetX = newOffsetX;
-                                                });
-                                              },
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                      const SizedBox(height: 10.0),
-                                      Container(
-                                        decoration: BoxDecoration(
-                                          color: Colors.white,
-                                          borderRadius:
-                                              BorderRadius.circular(10.0),
-                                        ),
-                                        child: Column(
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: <Widget>[
-                                            const Padding(
-                                              padding: EdgeInsets.only(
-                                                left: 15.0,
-                                                top: 5.0,
-                                              ),
-                                              child: Text(
-                                                "Offset Y-Axis",
-                                                textAlign: TextAlign.start,
-                                                style: kSubTitleTextStyle,
-                                              ),
-                                            ),
-                                            Slider(
-                                              value: offsetY,
-                                              max: 50,
-                                              activeColor: kPrimaryColor,
-                                              inactiveColor: kPrimaryColor
-                                                  .withOpacity(0.5),
-                                              label: offsetY.round().toString(),
-                                              onChanged: (double newOffsetY) {
-                                                setState(() {
-                                                  offsetY = newOffsetY;
-                                                });
-                                              },
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                    ],
                                   ),
-                                ),
+                                  const SizedBox(height: 10.0),
+                                  Container(
+                                    decoration: BoxDecoration(
+                                      color: Colors.white,
+                                      borderRadius: BorderRadius.circular(10.0),
+                                    ),
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: <Widget>[
+                                        const Padding(
+                                          padding: EdgeInsets.only(
+                                            left: 15.0,
+                                            top: 5.0,
+                                          ),
+                                          child: Text(
+                                            "Offset Y-Axis",
+                                            textAlign: TextAlign.start,
+                                            style: kSubTitleTextStyle,
+                                          ),
+                                        ),
+                                        Slider(
+                                          value: offsetY,
+                                          max: 50,
+                                          activeColor: kPrimaryColor,
+                                          inactiveColor:
+                                              kPrimaryColor.withOpacity(0.5),
+                                          label: offsetY.round().toString(),
+                                          onChanged: (double newOffsetY) {
+                                            setState(() {
+                                              offsetY = newOffsetY;
+                                            });
+                                          },
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ],
                               ),
-                              ExpansionPanelRadio(
-                                backgroundColor: Colors.white54,
-                                canTapOnHeader: true,
-                                value: "Border Radius",
-                                headerBuilder: (context, isExpanded) {
-                                  return Container(
-                                    alignment: Alignment.centerLeft,
-                                    padding: const EdgeInsets.symmetric(
-                                      horizontal: 10.0,
+                              customExpansionPanelRadio(
+                                title: "Border Radius",
+                                children: <Widget>[
+                                  Container(
+                                    decoration: BoxDecoration(
+                                      color: Colors.white,
+                                      borderRadius: BorderRadius.circular(10.0),
                                     ),
-                                    child: const Text(
-                                      "Border Radius",
-                                      maxLines: 1,
-                                      style: TextStyle(
-                                        fontSize: 20.0,
-                                        fontWeight: FontWeight.w600,
-                                      ),
+                                    child: Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: <Widget>[
+                                        const Padding(
+                                          padding: EdgeInsets.only(
+                                            left: 15.0,
+                                            top: 5.0,
+                                          ),
+                                          child: Text(
+                                            "Border Radius",
+                                            textAlign: TextAlign.start,
+                                            style: kSubTitleTextStyle,
+                                          ),
+                                        ),
+                                        Slider(
+                                          value: borderRadius,
+                                          max: 100,
+                                          activeColor: kPrimaryColor,
+                                          inactiveColor:
+                                              kPrimaryColor.withOpacity(0.5),
+                                          label:
+                                              borderRadius.round().toString(),
+                                          onChanged: (double newBorderRadius) {
+                                            setState(() {
+                                              borderRadius = newBorderRadius;
+                                            });
+                                          },
+                                        ),
+                                      ],
                                     ),
-                                  );
-                                },
-                                body: Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child: Column(
-                                    children: <Widget>[
-                                      Container(
-                                        decoration: BoxDecoration(
-                                          color: Colors.white,
-                                          borderRadius:
-                                              BorderRadius.circular(10.0),
-                                        ),
-                                        child: Column(
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: <Widget>[
-                                            const Padding(
-                                              padding: EdgeInsets.only(
-                                                left: 15.0,
-                                                top: 5.0,
-                                              ),
-                                              child: Text(
-                                                "Border Radius",
-                                                textAlign: TextAlign.start,
-                                                style: kSubTitleTextStyle,
-                                              ),
-                                            ),
-                                            Slider(
-                                              value: borderRadius,
-                                              max: 100,
-                                              activeColor: kPrimaryColor,
-                                              inactiveColor: kPrimaryColor
-                                                  .withOpacity(0.5),
-                                              label: borderRadius
-                                                  .round()
-                                                  .toString(),
-                                              onChanged:
-                                                  (double newBorderRadius) {
-                                                setState(() {
-                                                  borderRadius =
-                                                      newBorderRadius;
-                                                });
-                                              },
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                    ],
                                   ),
-                                ),
-                              ),
-                              ExpansionPanelRadio(
-                                backgroundColor: Colors.white54,
-                                canTapOnHeader: true,
-                                value: "Shadow Customization3",
-                                headerBuilder: (context, isExpanded) {
-                                  return Container(
-                                    alignment: Alignment.centerLeft,
-                                    padding: const EdgeInsets.symmetric(
-                                      horizontal: 10.0,
-                                    ),
-                                    child: const Text(
-                                      "Shadow Customization",
-                                      maxLines: 1,
-                                      style: TextStyle(
-                                        fontSize: 20.0,
-                                        fontWeight: FontWeight.w600,
-                                      ),
-                                    ),
-                                  );
-                                },
-                                body: Padding(
-                                  padding: const EdgeInsets.all(8.0),
-                                  child: Column(
-                                    children: [
-                                      Container(
-                                        decoration: BoxDecoration(
-                                          color: Colors.white,
-                                          borderRadius:
-                                              BorderRadius.circular(10.0),
-                                        ),
-                                        child: Column(
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: <Widget>[
-                                            const Padding(
-                                              padding: EdgeInsets.only(
-                                                left: 15.0,
-                                                top: 5.0,
-                                              ),
-                                              child: Text(
-                                                "Offset X-Axis",
-                                                textAlign: TextAlign.start,
-                                                style: kSubTitleTextStyle,
-                                              ),
-                                            ),
-                                            Slider(
-                                              value: offsetX,
-                                              max: 50,
-                                              activeColor: kPrimaryColor,
-                                              inactiveColor: kPrimaryColor
-                                                  .withOpacity(0.5),
-                                              label: offsetX.round().toString(),
-                                              onChanged: (double newOffsetX) {
-                                                setState(() {
-                                                  offsetX = newOffsetX;
-                                                });
-                                              },
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
+                                ],
                               ),
                             ],
                           ),
@@ -370,16 +253,39 @@ class _ShadowGeneratorState extends State<ShadowGenerator> {
                           fontWeight: FontWeight.w700),
                     ),
                   ),
-                  CopyCodeButton(onPressed: () {
-                    Clipboard.setData(ClipboardData(text: getFinalCode()))
-                        .then((value) {
-                      FlutterySnackBar(
-                        context: context,
-                        message: "Code Copied Successfully!",
-                        icon: Icons.done_rounded,
-                      ).customSnackBar();
-                    });
-                  }),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      CopyCodeButton(
+                        icon: Icons.code_rounded,
+                        buttonText: "COPY",
+                        onPressed: () {
+                          Clipboard.setData(ClipboardData(text: getFinalCode()))
+                              .then((value) {
+                            FlutterySnackBar(
+                              context: context,
+                              message: "Code Copied Successfully!",
+                              icon: Icons.done_rounded,
+                            ).customSnackBar();
+                          });
+                        },
+                      ),
+                      CopyCodeButton(
+                        icon: Icons.refresh_rounded,
+                        buttonText: "RESET",
+                        onPressed: () {
+                          setState(() {
+                            boxColor = Colors.white;
+                            shadowColor = kShadowColor;
+                            offsetX = 0.0;
+                            offsetY = 12.0;
+                            blurRadius = 16.0;
+                            borderRadius = 10.0;
+                          });
+                        },
+                      ),
+                    ],
+                  ),
                 ],
               ),
             ),
@@ -387,6 +293,39 @@ class _ShadowGeneratorState extends State<ShadowGenerator> {
         ],
       ),
       drawer: const CustomCommonDrawer(),
+    );
+  }
+
+  ExpansionPanelRadio customExpansionPanelRadio({
+    required String title,
+    required List<Widget> children,
+  }) {
+    return ExpansionPanelRadio(
+      backgroundColor: Colors.white54,
+      canTapOnHeader: true,
+      value: title,
+      headerBuilder: (context, isExpanded) {
+        return Container(
+          alignment: Alignment.centerLeft,
+          padding: const EdgeInsets.symmetric(
+            horizontal: 10.0,
+          ),
+          child: Text(
+            title,
+            maxLines: 1,
+            style: const TextStyle(
+              fontSize: 20.0,
+              fontWeight: FontWeight.w600,
+            ),
+          ),
+        );
+      },
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Column(
+          children: children,
+        ),
+      ),
     );
   }
 }

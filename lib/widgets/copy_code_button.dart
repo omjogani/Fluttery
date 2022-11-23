@@ -6,8 +6,12 @@ class CopyCodeButton extends StatefulWidget {
   const CopyCodeButton({
     super.key,
     required this.onPressed,
+    required this.buttonText,
+    required this.icon,
   });
   final Function onPressed;
+  final String buttonText;
+  final IconData icon;
 
   @override
   State<CopyCodeButton> createState() => _CopyCodeButtonState();
@@ -44,13 +48,13 @@ class _CopyCodeButtonState extends State<CopyCodeButton> {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Icon(
-              Icons.code_rounded,
+            Icon(
+              widget.icon,
               color: Colors.white,
             ),
             const SizedBox(width: 5.0),
             Text(
-              "COPY",
+              widget.buttonText,
               style: kSubTitleTextStyle.copyWith(color: Colors.white),
             ),
           ],
