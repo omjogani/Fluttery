@@ -8,11 +8,13 @@
 
 ---
 
+<div align="center">
 <a><img src="https://img.shields.io/github/issues/omjogani/Fluttery?color=565BDD&style=for-the-badge"/></a>
 <a><img src="https://img.shields.io/github/issues-pr/omjogani/Fluttery?color=565BDD&style=for-the-badge"/></a>
 <a><img src="https://img.shields.io/github/stars/omjogani/Fluttery?color=565BDD&style=for-the-badge"/></a>
 <a><img src="https://img.shields.io/github/forks/omjogani/Fluttery?color=565BDD&style=for-the-badge"/></a>
 <a><img src="https://img.shields.io/github/contributors/omjogani/Fluttery?color=565BDD&style=for-the-badge"/></a>
+</div>
 
 ## Technologies
 ---
