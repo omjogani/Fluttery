@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fluttery/constants/colors.dart';
+import 'package:fluttery/screens/pre_built_widgets/pre_built_widgets.dart';
 import 'package:fluttery/tools/shadow_generator/shadow_generator.dart';
 
 void main() {
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
         fontFamily: "SF Pro Text",
       ),
       
-      home: const ShadowGenerator(),
+      home: PreBuiltWidgets(),
     );
   }
 }

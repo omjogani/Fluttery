@@ -32,3 +32,7 @@ const kPrimaryBlue = Color(0xFFE9F6FF);
 const kPrimaryPink = Color(0xFFF7ECFA);
 
 const kPrimaryColor = Color(0xFF565BDD);
+
+const kPrimaryShadow = <BoxShadow>[
+  BoxShadow(color: kShadowColor, offset: Offset(0, 12), blurRadius: 16.0),
+];

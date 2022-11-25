@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:fluttery/constants/colors.dart';
 import 'package:fluttery/constants/text_styles.dart';
 import 'package:fluttery/screens/home/components/close_button.dart';
-import 'package:fluttery/screens/home/components/drawer_list_tile.dart';
+import 'package:fluttery/widgets/drawer_list_tile.dart';
 
 class CustomCommonDrawer extends StatelessWidget {
   const CustomCommonDrawer({super.key});
@@ -41,6 +41,11 @@ class CustomCommonDrawer extends StatelessWidget {
             DrawerListTile(
               icon: Icons.design_services_rounded,
               text: "Tools",
+              onTap: () {},
+            ),
+            DrawerListTile(
+              icon: Icons.widgets_rounded,
+              text: "Pre-Built Widgets",
               onTap: () {},
             ),
             DrawerListTile(
