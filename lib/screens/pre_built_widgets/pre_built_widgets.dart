@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fluttery/constants/colors.dart';
 import 'package:fluttery/constants/text_styles.dart';
+import 'package:fluttery/screens/pre_built_widgets/widgets/credit_card.dart';
 import 'package:fluttery/screens/pre_built_widgets/widgets/fail_message.dart';
 import 'package:fluttery/screens/pre_built_widgets/widgets/profile_view.dart';
 import 'package:fluttery/screens/pre_built_widgets/widgets/success_message.dart';
@@ -59,9 +60,9 @@ class _PreBuiltWidgetsState extends State<PreBuiltWidgets> {
                   fileName: "fail_message.dart",
                 ),
                 PreBuiltWidgetCard(
-                  widget: ProfileView(),
-                  name: "Profile View",
-                  fileName: "profile_view.dart",
+                  widget: CreditCard(),
+                  name: "Credit Card",
+                  fileName: "credit_card.dart",
                 ),
                 PreBuiltWidgetCard(
                   widget: ProfileView(),
